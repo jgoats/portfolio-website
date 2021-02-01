@@ -36,24 +36,34 @@ Secondary Color (green): #11c47c;
 body {
    font-family: 'Yusei Magic', sans-serif;
    font-style: italic;
+   color :#222322;
    color : var(--text-color);
 }
 h1 {
+   font-size : 30px;
    font-size: var(--h1-font-size);
+   font-weight : 700;
    font-weight: var(--header-font-weight);
+   color : inherit;
  }
  
  h2 {
+   font-size : 30px;
    font-size: var(--h2-font-size);
+   font-weight : 700;
    font-weight: var(--header-font-weight);
+   color : inherit;
  }
  
  h3 {
+   font-size : 18px;
    font-size: var(--h3-font-size);
+   font-weight : 700;
    font-weight: var(--header-font-weight);
  }
 
  a {
+   color :  #468182;
    color: var(--primary-color);
  }
  
@@ -63,11 +73,13 @@ h1 {
  }
  a:visited {
    /* visited link */
+   color :  #468182;
    color: var(--primary-color);
  }
  
  a:active {
    /* selected link */
+   color : #11c47c;
    color: var(--secondary-color);
  }
 
@@ -77,10 +89,13 @@ h1 {
    /* takes the font from the outer container */
    font-family: inherit;
    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+   background-color : #468182;
    background-color: var(--primary-color);
+   color : #eee;
    color: var(--white-color);
    text-decoration: none;
    /*adds spacing to the button (this will be discussed more in-depth later) */
+   padding : 10px;
    padding: var(--button-padding);
    border-radius: 3px;
    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -99,6 +114,7 @@ h1 {
    -webkit-box-pack: center;
        -ms-flex-pack: center;
            justify-content: center;
+   color : #eee;
    color : var(--white-color);
    text-decoration : none;
       /* overwrites browser defaults and resets the border */
@@ -107,8 +123,10 @@ h1 {
    font-family: inherit;
    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
    background-color:  #468182;
+   background-color : var(--primary-color);
    text-decoration: none;
    /*adds spacing to the button (this will be discussed more in-depth later) */
+   padding : 10px;
    padding: var(--button-padding);
    border-radius: 3px;
    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -124,6 +142,7 @@ h1 {
    -webkit-box-pack: center;
        -ms-flex-pack: center;
            justify-content: center;
+   color : #eee;
    color : var(--white-color);
    text-decoration : none;
       /* overwrites browser defaults and resets the border */
@@ -132,8 +151,10 @@ h1 {
    font-family: inherit;
    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
    background-color:  #548181;
+   background-color : var(--primary-color);
    text-decoration: none;
    /*adds spacing to the button (this will be discussed more in-depth later) */
+   padding  : 10px;
    padding: var(--button-padding);
    border-radius: 3px;
    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -143,6 +164,7 @@ h1 {
    transition: 0.2s opacity;
  }
  #cv_footer--link {
+   color : #eee;
    color : var(--white-color);
    text-decoration : none;
    display : block;
@@ -204,28 +226,25 @@ h1 {
  .profile {
      max-width : 700px;
      margin : 0 auto;
+     background-color : #11c47c;
      background-color : var(--secondary-color);
      height : 270px;
+     padding : 10px;
      padding : var(--button-padding);
      border-radius : 15px; 
  }
- .profile__content--container {
-     display : -ms-grid;
-     display : grid;
-     -ms-grid-columns : 1fr;
-     grid-template-columns : 1fr;
-     -ms-grid-rows : auto;
-     grid-template-rows : auto;
-     background-color : var(--white-color);
-     vertical-align: center;
-     height : 100%;
-     padding : 5px;
-     border-radius : 15px;
-     text-align : center;
+ .profile-item {
+   display : block;
+   width : 100%;
+   text-align : center;
  }
- .profile__content--container > *:nth-child(1) {
-  -ms-grid-row : 1;
-  -ms-grid-column : 1;
+ #greeting {
+   display : block;
+   text-align : center;
+ }
+ #description {
+   display : block;
+   text-align : center;
  }
  .profile__content--container > button {
      width : 65%;
@@ -234,20 +253,29 @@ h1 {
      margin-right : auto;
  }
  .main__container--large {
-   display : -ms-grid;
-   display : grid;
-   -ms-grid-columns : 1fr 20px 1fr;
-   grid-template-columns : 1fr 1fr;
-   grid-gap : 20px;
+   display : block;
    margin-bottom : 20px;
+   width : auto;
  }
  .div__container--white {
+   background-color : #eee;
    background-color : var(--white-color);
    line-height : 2rem; 
+   display : block;
+   width : 80%;
+   margin-left : auto;
+   margin-right : auto;
+   text-align : center;
+   margin-bottom : 20px;
  }
  .table__container--align {
    text-align : center;
    height : 100%;
+   width : auto;
+   display : table;
+   width : 70%;
+   margin-left : auto;
+   margin-right : auto;
  }
  #img__hometown--animation {
    margin-left : auto;
@@ -348,6 +376,27 @@ h1 {
   /* end grid fallback */
   
   @supports (display: grid) {
+   .profile__content--container {
+     display : -ms-grid;
+     display : grid;
+     -ms-grid-columns : 1fr;
+     grid-template-columns : 1fr;
+     -ms-grid-rows : auto;
+     grid-template-rows : auto;
+     background-color : #eee;
+     background-color : var(--white-color);
+     vertical-align: center;
+     height : 100%;
+     padding : 5px;
+     border-radius : 15px;
+     text-align : center;
+ }
+   .profile__content--container > *:nth-child(1) {
+     -ms-grid-row : 1;
+     grid-row : 1;
+     -ms-grid-column : 1;
+     grid-column : 1;
+ }
    .grid {
      display: -ms-grid;
      display: grid;
@@ -397,3 +446,5 @@ h1 {
      grid-template-columns: 1fr;
    }
  }
+
+ 
